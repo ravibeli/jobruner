@@ -1,4 +1,4 @@
-# Spring Batch Job Demonstration with ItemRead, ItemWrite, ItemProcessor
+# Spring Batch Job Demonstration with ItemReader, ItemWriter, ItemProcessor interface implementation from Spring Batch
 ## jobrunner - simple spring boot application demonstrate distributed batch job
 
 ### Features:
