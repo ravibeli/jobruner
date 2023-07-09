@@ -1,25 +1,4 @@
-/**
- *               Copyright © 2022-2022, Blue Yonder Group, Inc.
- *
- *                              All Rights Reserved
- *
- *                 THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF
- *
- *                               BLUE YONDER GROUP, INC.
- *
- *               The copyright notice above does not evidence any actual
- *
- *                    or intended publication of such source code.
- */
-
 package com.poller.jobruner.entity.base;
-
-/*
- * Role Based Access Control.
- * @author Chandra Sekhar Ramamoorthi : 1027583
- * @project plan-sop-rbac
- * @created on 14-May-21
- **/
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
