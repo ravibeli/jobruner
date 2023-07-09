@@ -10,6 +10,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +22,8 @@ import java.util.List;
 @ConditionalOnProperty(name = "sca.event.job.enabled", havingValue = "true")
 public class EvenActionStatusPollerJobConfig {
 
+    @Value("${batch.chunk.size}")
+    Integer batchChunkSize;
     @Autowired
     JobBuilderFactory jobBuilderFactory;
 
@@ -39,7 +42,7 @@ public class EvenActionStatusPollerJobConfig {
     @Bean
     public Step processEventActionExecutionStep() {
         return stepBuilderFactory.get("processEventActionExecutionStep")
-                .<List<EventActionExecution>, List<EventActionExecution>>chunk(5)  //This will pick only 5 records at a time a chunk and process it
+                .<List<EventActionExecution>, List<EventActionExecution>>chunk(batchChunkSize)  //This will pick only 5 records at a time a chunk and process it
                 .reader(reader)
                 .processor(processor)
                 .writer(writer)

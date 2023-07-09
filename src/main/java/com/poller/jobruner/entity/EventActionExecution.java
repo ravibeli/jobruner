@@ -30,18 +30,19 @@ public class EventActionExecution extends Auditable {
     @Column(name = "id")
     private String id;
 
-    @NotEmpty
+    @NotEmpty(message = "eventActionId can not be empty or null")
     @Column(name = "event_action_id", updatable = false, nullable = false)
     private String eventActionId;
 
+    @NotEmpty(message = "executionId can not be empty or null")
     @Column(name = "execution_id", updatable = false, nullable = false)
     private String executionId;
 
-    @NotEmpty
+    @NotEmpty(message = "tenantId can not be empty or null")
     @Column(name = "tenant_id", updatable = false, nullable = false)
     private String tenantId;
 
-    @NotEmpty
+    @NotEmpty(message = "status can not be empty or null")
     @Column(name = "status")
     private String status;
 
