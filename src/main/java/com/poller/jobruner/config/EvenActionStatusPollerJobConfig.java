@@ -39,7 +39,7 @@ public class EvenActionStatusPollerJobConfig {
     @Bean
     public Step processEventActionExecutionStep() {
         return stepBuilderFactory.get("processEventActionExecutionStep")
-                .<List<EventActionExecution>, List<EventActionExecution>>chunk(5)
+                .<List<EventActionExecution>, List<EventActionExecution>>chunk(5)  //This will pick only 5 records at a time a chunk and process it
                 .reader(reader)
                 .processor(processor)
                 .writer(writer)
