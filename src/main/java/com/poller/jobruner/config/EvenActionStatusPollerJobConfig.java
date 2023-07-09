@@ -1,4 +1,4 @@
-package com.poller.jobruner.config;  //EvenActionStatusPollerJobConfig
+package com.poller.jobruner.config;
 
 import com.poller.jobruner.entity.EventActionExecution;
 import com.poller.jobruner.jobsteps.EventActionExecutionProcessor;
