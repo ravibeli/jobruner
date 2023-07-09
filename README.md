@@ -6,3 +6,5 @@ Job can be switched ON or OFF using this configuration flag in application.prope
 ```properties
 sca.event.job.enabled=true
 ```
+
+![image](https://github.com/ravibeli/jobruner/assets/928202/a22ac539-533c-40f2-af3b-680a2e4783a0)
